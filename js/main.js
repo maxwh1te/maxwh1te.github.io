@@ -62,7 +62,10 @@ jQuery(document).ready(function($){
     $(window).on('scroll', function() {
         var currentScrollPos = window.pageYOffset;
         if (prevScrollpos < currentScrollPos) {
-            $(navSite, menuButton, topLinkButton, topLinkMenu).removeClass('active');
+            menuButton.removeClass('active');
+            navSite.removeClass('active');
+            topLinkButton.removeClass('active');
+            topLinkMenu.removeClass('active');
         }
         prevScrollpos = currentScrollPos;
     });

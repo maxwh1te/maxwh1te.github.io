@@ -173,6 +173,10 @@ a.menu-link {
   background: none;
 }
 
+.menu-bottom {
+  display: flex;
+}
+
 .links-bottom {
   display: flex;
   flex-flow: row wrap;
@@ -189,7 +193,7 @@ a.menu-link {
 
 .links-list {
   padding: 17px 0 20px 0;
-  width: 80%;
+  width: 96%;
 }
 
 ul.links-bottom-left {
@@ -1490,7 +1494,6 @@ button:focus  {
       display: block;
       margin: auto;
       transition: .3s all ease;
-      transform: rotate(180deg);
       &:after {
         top: 8px;
       }
