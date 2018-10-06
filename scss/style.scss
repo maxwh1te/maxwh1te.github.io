@@ -2036,6 +2036,7 @@ button:focus  {
   left: 10px;
   cursor: pointer;
   display: none;
+  z-index: 10;
   &:before {
     content: "";
     background: url('../img/go-to-the-top.png') no-repeat 0 0;
