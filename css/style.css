@@ -2,8 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 a, abbr, acronym, address, article, aside,
@@ -25,7 +23,7 @@ body {
   color: #343e5c;
 }
 
-.header {
+header {
   background: #fff;
 }
 
@@ -239,6 +237,10 @@ ul.links-bottom-left a:hover, ul.links-bottom-right a:hover {
   font-weight: 700;
   width: 83%;
   letter-spacing: -0.4px;
+}
+
+.container {
+  max-width: 100%;
 }
 
 /*-------------------------------------------------SLIDESHOW--------------------------------*/
@@ -464,9 +466,6 @@ ul.links-bottom-left a:hover, ul.links-bottom-right a:hover {
   cursor: pointer;
   font-size: 13px;
   font-weight: 600;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 .freechec input {
@@ -499,12 +498,10 @@ ul.links-bottom-left a:hover, ul.links-bottom-right a:hover {
   border-radius: 50px;
 }
 
-/* Show the checkmark when checked */
 .freechec input:checked ~ .checkmark:after {
   display: block;
 }
 
-/* Style the checkmark/indicator */
 .freechec .checkmark:after {
   left: 7px;
   top: 3px;
@@ -512,8 +509,6 @@ ul.links-bottom-left a:hover, ul.links-bottom-right a:hover {
   height: 8px;
   border: solid white;
   border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
@@ -1019,7 +1014,6 @@ ul.main-menu-list,
 }
 
 .iconArrow-active {
-  -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
@@ -1052,9 +1046,6 @@ li.secondary-menu a {
   font-size: 13px;
   font-weight: 700;
   color: #343e5c;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 .availcheck input {
@@ -1162,9 +1153,6 @@ li.secondary-menu a {
   font-size: 12px;
   color: #343e5c;
   font-weight: 600;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 .brands-container input {
@@ -1209,8 +1197,6 @@ li.secondary-menu a {
   height: 6px;
   border: solid white;
   border-width: 0 2px 2px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
@@ -1248,9 +1234,6 @@ li.secondary-menu a {
   font-size: 12px;
   color: #343e5c;
   font-weight: 700;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 .condition-container input {
@@ -1269,7 +1252,7 @@ li.secondary-menu a {
   border: 1px solid #eee;
   background-color: #fff;
 }
-.condition-checkmark :after {
+.condition-checkmark:after {
   content: "";
   position: absolute;
   display: none;
@@ -1295,8 +1278,6 @@ li.secondary-menu a {
   height: 6px;
   border: solid white;
   border-width: 0 2px 2px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
@@ -1449,13 +1430,25 @@ button:focus {
   outline: none;
 }
 
-/*-------------------------Media 1024px--------------------------------*/
-@media (max-width: 1040px) {
-  /*.logoMenu {
-    display: inline-block;
-  }*/
+@media (max-width: 1199.98px) {
+  header,
+.container,
+footer {
+    max-width: 1199px;
+  }
+
   .logo-menu {
     padding: 1.3% 2.5% 0 0;
+  }
+
+  .logoMenuToggle span:before,
+.logoMenuToggle span:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -8px;
+    transition: 0.3s all ease;
+    transform-origin: 1.71429px center;
   }
 
   .logoMenuToggle {
@@ -1480,16 +1473,19 @@ button:focus {
     transition: 0.3s all ease;
     transform: rotate(180deg);
   }
-  .logoMenuToggle span:before {
-    transform: rotate3d(0, 0, 1, -40deg);
-  }
   .logoMenuToggle span:after {
     top: 8px;
-    transform: rotate3d(0, 0, 1, 40deg);
   }
 
   .logoMenuToggle.active span {
     transform: rotate(360deg);
+  }
+  .logoMenuToggle.active span:before {
+    transform: rotate3d(0, 0, 1, -40deg);
+  }
+  .logoMenuToggle.active span:after {
+    top: 8px;
+    transform: rotate3d(0, 0, 1, 40deg);
   }
 
   .logoMenuToggle span,
@@ -1500,16 +1496,6 @@ button:focus {
     background-color: #e3e8f0;
     backface-visibility: hidden;
     border-radius: 0;
-  }
-
-  .logoMenuToggle span:before,
-.logoMenuToggle span:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: -8px;
-    transition: 0.3s all ease;
-    transform-origin: 1.71429px center;
   }
 
   .logoMenuToggle.active span:before,
@@ -1617,9 +1603,6 @@ ul.links-bottom-left li:last-child {
     transition: 0.3s all ease;
   }
 
-  /*.cart-button .click {
-    -webkit-transform: rotate(90deg);
-  }*/
   ul.menu-item {
     justify-content: center;
     flex-flow: column wrap;
@@ -1634,7 +1617,7 @@ ul.links-bottom-left li:last-child {
     padding: 4px 10px;
     visibility: hidden;
     transform: translateX(100%);
-    transition: 0.2s all cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition: 0.3s all cubic-bezier(0.785, 0.135, 0.15, 0.86);
   }
   .link-menu li {
     margin: 0 12px 7px;
@@ -1668,8 +1651,26 @@ ul.links-bottom-left li:last-child {
     order: 2;
   }
 }
-/*-----------------------------media 768px--------*/
-@media (max-width: 768px) {
+@media (max-width: 991.98px) {
+  header,
+.container,
+footer {
+    max-width: 991px;
+  }
+
+  .link-menu {
+    right: 0;
+  }
+
+  .footer-head {
+    padding: 63px 40px;
+  }
+
+  .footer-wrap {
+    padding: 55px 40px;
+  }
+}
+@media (max-width: 767.98px) {
   .logo {
     z-index: 6;
   }
@@ -1709,8 +1710,7 @@ ul.links-bottom-left li:last-child {
     padding: 4.5% 8% 3% 8.2%;
   }
 }
-/*-------------------------------media 680px--------------------------*/
-@media (max-width: 680px) {
+@media (max-width: 575.98px) {
   .footer-head {
     padding: 15px 17px 63px 15px;
   }
@@ -1803,9 +1803,7 @@ ul.links-bottom-left li:last-child {
   .footer-nav a {
     margin: 3px 14px;
   }
-}
-/*--------------------------------media 500px--------*/
-@media (max-width: 500px) {
+
   .menu-up {
     position: relative;
   }
@@ -1820,10 +1818,6 @@ ul.links-bottom-left li:last-child {
     top: 19%;
     left: 18%;
     z-index: 6;
-  }
-
-  .link-menu {
-    top: 55px;
   }
 
   .cart-button {
@@ -1852,10 +1846,6 @@ ul.links-bottom-left li:last-child {
 
   ul.menu-item {
     justify-content: space-between;
-  }
-
-  .link-menu {
-    padding: 0;
   }
 
   .links-list {
@@ -1912,13 +1902,12 @@ ul.links-bottom-left li:last-child {
   .filters {
     position: absolute;
     width: 50%;
-    transform: translateX(-110%);
+    transform: translateX(-106%);
     z-index: 5;
     transition: 0.3s;
   }
 
   .filters.active {
-    -webkit-transform: translateX(0);
     transform: translateX(0);
   }
 
@@ -1953,7 +1942,6 @@ ul.links-bottom-left li:last-child {
     transform: rotate(180deg);
   }
 }
-/*--------------------------------media 400px--------*/
 @media (max-width: 400px) {
   .menuUpRight {
     padding: 0;
@@ -1991,7 +1979,6 @@ ul.links-bottom-left li:last-child {
     top: 37%;
   }
 }
-/*-------------------------------media width 300px----------------*/
 @media (max-width: 320px) {
   .product {
     width: 100%;
