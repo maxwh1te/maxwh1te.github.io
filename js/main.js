@@ -113,4 +113,4 @@ jQuery(document).ready(function($){
         filters.next().removeClass('active');
         console.log('Filters close');
     })
-})
+});
