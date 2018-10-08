@@ -27,7 +27,8 @@ jQuery(document).ready(function($){
         }
     });
 //============ Main-menu-list (sidebar)
-    $('.openIconMenu').on('click', function() {
+    var openIconMenu = $('.openIconMenu');
+    openIconMenu.on('click', function() {
         $(this).parent('.menu-list-item').next().slideToggle();
         $(this).children().toggleClass('iconArrow-active');
     });
@@ -92,8 +93,9 @@ jQuery(document).ready(function($){
         $('body,html').animate({scrollTop:0},500);
     });
     //=====================button scroll sidebar
-    $('.filters-button-open').on('click', function() {
-        var filters = $('.filters');
+    var filtButOpen = $('.filters-button-open');
+    var filters = $('.filters');
+    filtButOpen.on('click', function() {
         if($(this).hasClass('active')) {
             filters.first().removeClass('active');
             $(this).removeClass('active');
@@ -103,5 +105,12 @@ jQuery(document).ready(function($){
             $(this).addClass('active');
             filters.next().addClass('active');
         }
+    });
+
+    filters.on('mouseleave', function() {
+        $(this).removeClass('active');
+        filtButOpen.removeClass('active');
+        filters.next().removeClass('active');
+        console.log('Filters close');
     })
-});
+})
