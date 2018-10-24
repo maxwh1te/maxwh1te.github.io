@@ -727,12 +727,12 @@ select {
   background: #fff;
   border-radius: 4px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
   margin-bottom: 50px;
 }
 
 .paginator-next {
-  padding: 3.5% 8% 3% 8.2%;
+  padding: 38px 8%;
   border-right: 1px solid #f0f2f7;
   &:last-of-type {
     .paginator-back-img {
@@ -1641,7 +1641,6 @@ button:focus  {
     background: #fff;
     padding: 4px 10px;
     visibility: hidden;
-    transform: translateX(100%);
     transition: .3s all cubic-bezier(0.785,.135,.15,.86);
     li {
       margin: 0 12px 7px;
@@ -1694,6 +1693,9 @@ button:focus  {
 
   .footer-wrap {
     padding: 55px 40px;
+  }
+  .paginator-next {
+    padding: 30px 8%;
   }
 }
 
@@ -1772,6 +1774,9 @@ button:focus  {
       &:after {
         top: 5px;
       }
+      &:before{
+        top: -5px;
+      }
     }
     &.active {
       transform: rotate(450deg);
@@ -1794,7 +1799,6 @@ button:focus  {
     content: "";
     position: absolute;
     left: 0;
-    top: -5px;
     transition: 0.3s all ease;
   }
 
@@ -1869,13 +1873,13 @@ button:focus  {
   }
 
   .cart {
-    padding: 0 4px 0 0;
+    padding: 0 10px 0 0;
   }
 
   .small-rounded-button {
     font-size: 10px;
     padding: 4px 10px;
-    margin: 3px 0 0 0;
+    margin: 3px 25px 0 0;
   }
 
   ul.menu-item {
@@ -1936,7 +1940,7 @@ button:focus  {
   .filters {
     position: absolute;
     width: 50%;
-    transform: translateX(-106%);
+    transform: translateX(-110%);
     z-index: 5;
     transition: 0.3s;
   }
@@ -1950,7 +1954,7 @@ button:focus  {
   }
 
   .paginator-pages a {
-    padding: 12px 17px;
+    padding: 7px;
   }
 
   .paginator-next {
@@ -1973,6 +1977,18 @@ button:focus  {
     &.active {
       transform: rotate(180deg);
     }
+  }
+
+  .footer-wrap {
+    padding: 17px 40px;
+  }
+
+  .footer-wrap {
+    flex-flow: row wrap;
+  }
+
+  .footer-wrap-text {
+    width: 100%;
   }
 }
 
@@ -2015,8 +2031,20 @@ button:focus  {
 }
 @media (max-width: 320px) {
 
+  .logo {
+    padding: 2px 0 0 5px;
+  }
+
   .product {
     width: 100%;
+  }
+
+  .availcheck {
+    padding: 2px 0 0 31px;
+  }
+
+  .product:last-child {
+    visibility: hidden;
   }
 }
 
