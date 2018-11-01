@@ -517,13 +517,11 @@ select {
   top: 0;
   left: 0;
   right: 0;
+  bottom: 0;
   margin: auto;
   max-width: 100%;
   max-height: 100%;
   border-radius: 4px 4px 0 0; }
-
-.product-img img {
-  bottom: 0; }
 
 .product-text {
   padding: 0 8%;
@@ -1218,7 +1216,7 @@ button:focus {
     content: "";
     position: absolute;
     left: 0;
-    top: -8px;
+    top: -9px;
     transition: .3s all ease;
     transform-origin: 1.71429px center; }
 
@@ -1693,7 +1691,6 @@ button:focus {
     display: inline-block; }
 
 .clearfix:after {
-  /*----------------------------------------------------clearfix----------------------------------------------*/
   content: "";
   display: table;
   clear: both;
